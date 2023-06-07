@@ -1,6 +1,9 @@
 using CatalogService as service from '../srv/catalog-service';
 
 annotate service.Books with @(
+    UpdateHidden        : false,
+    DeleteHidden        : false,
+    CreateHidden        : false,
     UI: {
         LineItem: [
             {Value: ID, Label: 'Book ID' },
@@ -25,12 +28,10 @@ annotate service.Authors with @(
         },
         {
             $Type : 'UI.DataField',
-            Label : 'name',
+            Label : 'Name',
             Value : name,
         },
-    ]
-);
-annotate service.Authors with @(
+    ],
     UI.FieldGroup #GeneratedGroup2 : {
         $Type : 'UI.FieldGroupType',
         Data : [
@@ -41,7 +42,7 @@ annotate service.Authors with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'name',
+                Label : 'Name',
                 Value : name,
             },
         ],
@@ -55,7 +56,7 @@ annotate service.Authors with @(
         },
          {
             $Type : 'UI.ReferenceFacet',
-            Label : 'Books associated with this author',
+            Label : 'Associated Books',
             Target : 'books/@UI.LineItem',
         },
 
