@@ -21,6 +21,10 @@
     "requires": {
       "db": {
         "kind": "sqlite",
+        "model" : [
+          "db",
+          "srv"
+        ],
         "credentials": {
           "database": "bookshop.db"
         }
